@@ -1,1 +1,295 @@
-index.html
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web MDE • Painel Gerencial</title>
+
+  <!-- CSS global -->
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <!-- Fonte Opcional (melhora muito a estética) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page">
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="logo-badge">M</span>
+          <div class="sidebar-brand">
+            <span class="brand-title">Web MDE</span>
+            <span class="brand-subtitle">Painel Gerencial</span>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/" class="nav-item active">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+
+        <a href="/pages/apartamentos.html" class="nav-item">
+          <span class="nav-icon">🏨</span>
+          <span class="nav-label">Mapa de UHs</span>
+        </a>
+
+        <a href="/pages/fechamento.html" class="nav-item">
+          <span class="nav-icon">💰</span>
+          <span class="nav-label">Fechamento de Caixa</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📦</span>
+          <span class="nav-label">Estoque</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📈</span>
+          <span class="nav-label">Relatórios</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Configurações</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🆘</span>
+          <span class="nav-label">Suporte</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-ghost full" id="logoutBtn">
+          <span>⏏</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button" id="sidebarToggle">☰</button>
+          <div class="topbar-title">
+            <h1>Dashboard Gerencial</h1>
+            <p class="topbar-subtitle">Indicadores gerais do hotel em tempo real</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+
+          <div class="hotel-select">
+            <label for="hotelSelect">Hotel</label>
+            <select id="hotelSelect">
+              <option>Hotel Central</option>
+              <option>Hotel Praia</option>
+            </select>
+          </div>
+
+          <button class="icon-button" id="themeToggle">🌓</button>
+
+          <div class="user-pill">
+            <span class="user-avatar">H</span>
+            <div class="user-info">
+              <span class="user-name">Hotel Exemplo</span>
+              <span class="user-email">contato@hotelexemplo.com</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <!-- KPIs -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Indicadores do Dia</h2>
+            <span class="section-subtitle">Atualizado automaticamente</span>
+          </div>
+
+          <div class="grid grid-4">
+            <article class="card kpi-card">
+              <header class="card-header">
+                <span class="kpi-label">Ocupação</span>
+              </header>
+              <div class="card-body">
+                <div class="kpi-value">78%</div>
+                <div class="kpi-footer positive">▲ +5 pts vs ontem</div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <header class="card-header">
+                <span class="kpi-label">Receita</span>
+              </header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 18.450</div>
+                <div class="kpi-footer">Hospedagem + Extras</div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <header class="card-header">
+                <span class="kpi-label">Check-ins</span>
+              </header>
+              <div class="card-body">
+                <div class="kpi-value">23</div>
+                <div class="kpi-footer">31 previstos</div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <header class="card-header">
+                <span class="kpi-label">Check-outs</span>
+              </header>
+              <div class="card-body">
+                <div class="kpi-value">17</div>
+                <div class="kpi-footer">3 saídas tardias</div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- GRÁFICOS -->
+        <section class="section">
+          <div class="grid grid-2">
+
+            <article class="card">
+              <header class="card-header">
+                <h3>Ocupação - Últimos 7 dias</h3>
+              </header>
+              <div class="card-body">
+                <div class="chart-placeholder">Gráfico aqui</div>
+              </div>
+            </article>
+
+            <article class="card">
+              <header class="card-header">
+                <h3>Receita por Centro de Custo</h3>
+              </header>
+              <div class="card-body">
+                <div class="chart-placeholder">Gráfico aqui</div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- PRÓXIMAS CHEGADAS + MOVIMENTOS -->
+        <section class="section">
+          <div class="grid grid-2">
+
+            <article class="card">
+              <header class="card-header">
+                <h3>Próximas Chegadas</h3>
+                <span class="card-chip">Hoje & Amanhã</span>
+              </header>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Reserva</th>
+                        <th>Hóspede</th>
+                        <th>UH</th>
+                        <th>Chegada</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>#4821</td>
+                        <td>Ana Souza</td>
+                        <td>202</td>
+                        <td>Hoje • 14:00</td>
+                        <td><span class="badge badge-warning">Previsto</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>#4822</td>
+                        <td>Carlos Lima</td>
+                        <td>305</td>
+                        <td>Hoje • 16:30</td>
+                        <td><span class="badge badge-info">Pré Check-in</span></td>
+                      </tr>
+
+                      <tr>
+                        <td>#4823</td>
+                        <td>Família Oliveira</td>
+                        <td>401</td>
+                        <td>Amanhã • 11:00</td>
+                        <td><span class="badge badge-muted">Confirmado</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </article>
+
+            <article class="card">
+              <header class="card-header">
+                <h3>Movimento do Caixa (Hoje)</h3>
+                <span class="card-chip">Entradas & Saídas</span>
+              </header>
+              <div class="card-body">
+                <div class="table-wrapper">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Hora</th>
+                        <th>Tipo</th>
+                        <th>Descrição</th>
+                        <th>Valor</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>08:12</td>
+                        <td><span class="badge badge-success">Entrada</span></td>
+                        <td>Pagamento diária</td>
+                        <td>R$ 420,00</td>
+                      </tr>
+
+                      <tr>
+                        <td>09:30</td>
+                        <td><span class="badge badge-danger">Saída</span></td>
+                        <td>Compra de insumos</td>
+                        <td>R$ 180,00</td>
+                      </tr>
+
+                      <tr>
+                        <td>11:05</td>
+                        <td><span class="badge badge-success">Entrada</span></td>
+                        <td>Bar piscina</td>
+                        <td>R$ 96,00</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- JS Global -->
+  <script src="/js/app.js"></script>
+</body>
+</html>
