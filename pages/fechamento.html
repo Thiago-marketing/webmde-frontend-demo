@@ -1,1 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fechamento de Caixa • Web MDE</title>
+
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page">
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="logo-badge">M</span>
+          <div class="sidebar-brand">
+            <span class="brand-title">Web MDE</span>
+            <span class="brand-subtitle">Painel Gerencial</span>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/" class="nav-item">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+
+        <a href="/pages/apartamentos.html" class="nav-item">
+          <span class="nav-icon">🏨</span>
+          <span class="nav-label">Mapa de UHs</span>
+        </a>
+
+        <a href="/pages/fechamento.html" class="nav-item active">
+          <span class="nav-icon">💰</span>
+          <span class="nav-label">Fechamento de Caixa</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📦</span>
+          <span class="nav-label">Estoque</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📈</span>
+          <span class="nav-label">Relatórios</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Configurações</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🆘</span>
+          <span class="nav-label">Suporte</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-ghost full" id="logoutBtn">
+          <span>⏏</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- ===========================================
+         MAIN
+    ============================================= -->
+    <div class="main">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button" id="sidebarToggle">☰</button>
+
+          <div class="topbar-title">
+            <h1>Fechamento de Caixa</h1>
+            <p class="topbar-subtitle">Movimentações consolidadas do dia</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="icon-button" id="themeToggle">🌓</button>
+
+          <div class="user-pill">
+            <span class="user-avatar">H</span>
+            <div class="user-info">
+              <span class="user-name">Hotel Exemplo</span>
+              <span class="user-email">contato@hotelexemplo.com</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ===========================================
+           CONTEÚDO PRINCIPAL
+      ============================================= -->
+      <main class="content">
+
+        <!-- RESUMO RÁPIDO -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Resumo Geral</h2>
+            <span class="section-subtitle">Fechamento completo do período</span>
+          </div>
+
+          <div class="grid grid-4">
+
+            <article class="card kpi-card">
+              <header class="card-header"><span class="kpi-label">Total Entradas</span></header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 8.420</div>
+                <div class="kpi-footer positive">Entradas gerais</div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <header class="card-header"><span class="kpi-label">Total Saídas</span></header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 1.260</div>
+                <div class="kpi-footer">Pagamentos realizados</div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <header class="card-header"><span class="kpi-label">Saldo Parcial</span></header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 7.160</div>
+                <div class="kpi-footer">Após entradas - saídas</div>
+              </div>
+            </article>
+
+            <article class="card kpi-card">
+              <header class="card-header"><span class="kpi-label">Contas Abertas</span></header>
+              <div class="card-body">
+                <div class="kpi-value">12</div>
+                <div class="kpi-footer">Hóspedes ainda não finalizados</div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+
+        <!-- FORMAS DE RECEBIMENTO -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Formas de Recebimento</h2>
+            <span class="section-subtitle">Resumo por método de pagamento</span>
+          </div>
+
+          <div class="grid grid-3">
+
+            <article class="card">
+              <header class="card-header"><h3>Dinheiro</h3></header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 2.110</div>
+                <div class="kpi-footer">28% do total</div>
+              </div>
+            </article>
+
+            <article class="card">
+              <header class="card-header"><h3>Cartão Crédito</h3></header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 4.980</div>
+                <div class="kpi-footer">59% do total</div>
+              </div>
+            </article>
+
+            <article class="card">
+              <header class="card-header"><h3>PIX</h3></header>
+              <div class="card-body">
+                <div class="kpi-value">R$ 1.330</div>
+                <div class="kpi-footer">13% do total</div>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+
+        <!-- ENTRADAS -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Entradas do Dia</h2>
+            <span class="section-subtitle">Movimentação financeira</span>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Hora</th>
+                      <th>Tipo</th>
+                      <th>Descrição</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>08:12</td>
+                      <td><span class="badge badge-success">Entrada</span></td>
+                      <td>Pagamento diária</td>
+                      <td>R$ 420,00</td>
+                    </tr>
+
+                    <tr>
+                      <td>09:30</td>
+                      <td><span class="badge badge-success">Entrada</span></td>
+                      <td>Restaurante</td>
+                      <td>R$ 96,00</td>
+                    </tr>
+
+                    <tr>
+                      <td>11:15</td>
+                      <td><span class="badge badge-success">Entrada</span></td>
+                      <td>Bar Piscina</td>
+                      <td>R$ 140,00</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- SAÍDAS -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Saídas</h2>
+            <span class="section-subtitle">Pagamentos efetuados</span>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Hora</th>
+                      <th>Tipo</th>
+                      <th>Descrição</th>
+                      <th>Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>10:01</td>
+                      <td><span class="badge badge-danger">Saída</span></td>
+                      <td>Compra de insumos</td>
+                      <td>R$ 180,00</td>
+                    </tr>
+
+                    <tr>
+                      <td>14:18</td>
+                      <td><span class="badge badge-danger">Saída</span></td>
+                      <td>Pagamento fornecedor lavanderia</td>
+                      <td>R$ 320,00</td>
+                    </tr>
+
+                    <tr>
+                      <td>16:40</td>
+                      <td><span class="badge badge-danger">Saída</span></td>
+                      <td>Compra de bebidas</td>
+                      <td>R$ 760,00</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- CONTAS EM ABERTO -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Contas Abertas</h2>
+            <span class="section-subtitle">Clientes ainda hospedados</span>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Reserva</th>
+                      <th>Hóspede</th>
+                      <th>UH</th>
+                      <th>Parcial</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#5001</td>
+                      <td>João Silva</td>
+                      <td>203</td>
+                      <td>R$ 350,00</td>
+                      <td><span class="badge badge-warning">Aberta</span></td>
+                    </tr>
+
+                    <tr>
+                      <td>#5002</td>
+                      <td>Ana Souza</td>
+                      <td>102</td>
+                      <td>R$ 780,00</td>
+                      <td><span class="badge badge-warning">Aberta</span></td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <!-- CONTAS FECHADAS -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Contas Fechadas</h2>
+            <span class="section-subtitle">Finalizações recentes</span>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <div class="table-wrapper">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>Reserva</th>
+                      <th>Hóspede</th>
+                      <th>UH</th>
+                      <th>Total</th>
+                      <th>Forma Pgto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>#4980</td>
+                      <td>Carlos Lima</td>
+                      <td>305</td>
+                      <td>R$ 890,00</td>
+                      <td>Cartão Crédito</td>
+                    </tr>
+
+                    <tr>
+                      <td>#4978</td>
+                      <td>Maria Paula</td>
+                      <td>107</td>
+                      <td>R$ 1.210,00</td>
+                      <td>PIX</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
 
