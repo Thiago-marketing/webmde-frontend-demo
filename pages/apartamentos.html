@@ -1,1 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mapa de Apartamentos • Web MDE</title>
+
+  <link rel="stylesheet" href="/css/app.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body class="page">
+  <div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <span class="logo-badge">M</span>
+          <div class="sidebar-brand">
+            <span class="brand-title">Web MDE</span>
+            <span class="brand-subtitle">Painel Gerencial</span>
+          </div>
+        </div>
+        <button class="sidebar-close" id="sidebarCloseBtn">✕</button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="/" class="nav-item">
+          <span class="nav-icon">📊</span>
+          <span class="nav-label">Dashboard</span>
+        </a>
+
+        <a class="nav-item active" href="/pages/apartamentos.html">
+          <span class="nav-icon">🏨</span>
+          <span class="nav-label">Mapa de UHs</span>
+        </a>
+
+        <a href="/pages/fechamento.html" class="nav-item">
+          <span class="nav-icon">💰</span>
+          <span class="nav-label">Fechamento de Caixa</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📦</span>
+          <span class="nav-label">Estoque</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">📈</span>
+          <span class="nav-label">Relatórios</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">Configurações</span>
+        </a>
+
+        <a href="#" class="nav-item">
+          <span class="nav-icon">🆘</span>
+          <span class="nav-label">Suporte</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="btn-ghost full" id="logoutBtn">
+          <span>⏏</span>
+          <span>Sair</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="backdrop" id="backdrop"></div>
+
+    <!-- MAIN -->
+    <div class="main">
+
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-button" id="sidebarToggle">☰</button>
+
+          <div class="topbar-title">
+            <h1>Mapa de Apartamentos</h1>
+            <p class="topbar-subtitle">Status geral das Unidades Habitacionais</p>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <button class="icon-button" id="themeToggle">🌓</button>
+
+          <div class="user-pill">
+            <span class="user-avatar">H</span>
+            <div class="user-info">
+              <span class="user-name">Hotel Exemplo</span>
+              <span class="user-email">contato@hotelexemplo.com</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="content">
+
+        <!-- LEGENDAS -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Status das UHs</h2>
+            <span class="section-subtitle">Legenda e identificação rápida</span>
+          </div>
+
+          <div class="status-legend">
+            <span class="legend-item status-livre">Livre</span>
+            <span class="legend-item status-ocupado">Ocupado</span>
+            <span class="legend-item status-limpeza">Limpeza</span>
+            <span class="legend-item status-manut">Manutenção</span>
+            <span class="legend-item status-bloq">Bloqueado</span>
+          </div>
+        </section>
+
+
+        <!-- MAPA DE UHs -->
+        <section class="section">
+          <div class="section-header">
+            <h2>Mapa Dinâmico</h2>
+            <span class="section-subtitle">Clique para ver mais detalhes de cada UH</span>
+          </div>
+
+          <div class="uh-grid">
+
+            <!-- UH LIVRE -->
+            <div class="uh-card uh-livre">
+              <header class="uh-header">
+                <span class="uh-number">101</span>
+                <span class="uh-status">Livre</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Standard Casal</p>
+              </div>
+            </div>
+
+            <!-- UH OCUPADO -->
+            <div class="uh-card uh-ocupado">
+              <header class="uh-header">
+                <span class="uh-number">102</span>
+                <span class="uh-status">Ocupado</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Hóspede: João Lima</p>
+                <p class="uh-info">Saída: 03/12 • 12h00</p>
+              </div>
+            </div>
+
+            <!-- UH LIMPEZA -->
+            <div class="uh-card uh-limpeza">
+              <header class="uh-header">
+                <span class="uh-number">103</span>
+                <span class="uh-status">Limpeza</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Apto liberando</p>
+              </div>
+            </div>
+
+            <!-- UH MANUTENÇÃO -->
+            <div class="uh-card uh-manut">
+              <header class="uh-header">
+                <span class="uh-number">104</span>
+                <span class="uh-status">Manutenção</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Ar-condicionado</p>
+              </div>
+            </div>
+
+            <!-- UH BLOQUEADO -->
+            <div class="uh-card uh-bloq">
+              <header class="uh-header">
+                <span class="uh-number">105</span>
+                <span class="uh-status">Bloqueado</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Bloqueio administrativo</p>
+              </div>
+            </div>
+
+            <!-- UH LIVRE -->
+            <div class="uh-card uh-livre">
+              <header class="uh-header">
+                <span class="uh-number">106</span>
+                <span class="uh-status">Livre</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Luxo Casal</p>
+              </div>
+            </div>
+
+            <!-- UH OCUPADO -->
+            <div class="uh-card uh-ocupado">
+              <header class="uh-header">
+                <span class="uh-number">107</span>
+                <span class="uh-status">Ocupado</span>
+              </header>
+              <div class="uh-body">
+                <p class="uh-info">Hóspede: Maria Paula</p>
+                <p class="uh-info">Saída: 02/12 • 11h30</p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>
 
